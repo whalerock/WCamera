@@ -1,6 +1,6 @@
 //
-//  AGCamera.swift
-//  AGCamera
+//  WCamera.swift
+//  WCamera
 //
 //  Created by Aramik on 5/12/17.
 //  Copyright © 2017 aramikg. All rights reserved.
@@ -11,39 +11,24 @@ import UIKit
 import AVFoundation
 import CoreImage
 
-public protocol AGCamera: class, AVCapturePhotoCaptureDelegate {
-    weak var delegate: AGCameraDelegate? { get set }
+public protocol WCamera: class, AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
+    weak var delegate: WCameraDelegate? { get set }
     
-    var  captureSession: AVCaptureSession! { get set }
-    var cameraDirection: AGCameraDirection! { get set }
-    var captureVideoDataOutput: AVCaptureVideoDataOutput! { get set }
+    var captureSession: AVCaptureSession! { get set }
+    var cameraDirection: WCameraDirection! { get set }
     var captureDeviceInput: AVCaptureDeviceInput! { get set }
-    var captureDevice: AVCaptureDevice! { get set }
     
     var previewView: UIView! { get set }
     var previewLayer: AVCaptureVideoPreviewLayer! { get set }
-    func start(cameraUsing settings: AGCameraSettings) throws
+    func start(cameraUsing settings: WCameraSettings) throws
+    
+    var stillImageOutput: AVCapturePhotoOutput! { get set }
+    var captureVideoDataOutput: AVCaptureVideoDataOutput! { get set }
+    var movieOutput: AVCaptureMovieFileOutput! { get set }
+    var captureDevice: AVCaptureDevice! { get set }
 }
 
-extension AGCamera {
-    public var stillImageOutput: AVCapturePhotoOutput {
-        return AVCapturePhotoOutput()
-    }
-    
-    public var captureVideoDataOutput: AVCaptureVideoDataOutput {
-        return AVCaptureVideoDataOutput()
-    }
-    
-    public var movieOutout: AVCaptureMovieFileOutput {
-        return AVCaptureMovieFileOutput()
-    }
-    
-    public var captureDevice: AVCaptureDevice {
-        return AVCaptureDevice()
-    }
-    
-    
-  
+extension WCamera {
     
     private func setupPreviewView() {
         guard previewView == nil else { return }
@@ -63,7 +48,7 @@ extension AGCamera {
         previewView.layer.addSublayer(previewLayer)
     }
     
-    private func getCameraDevice(direction: AGCameraDirection) -> AVCaptureDevice?{
+    private func getCameraDevice(direction: WCameraDirection) -> AVCaptureDevice?{
         let videoDevices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo)
         
         for device in videoDevices! {
@@ -87,8 +72,7 @@ extension AGCamera {
         return nil
     }
 
-    public func start(cameraUsing settings: AGCameraSettings)  {
-       
+    public func start(cameraUsing settings: WCameraSettings)  {
        
         captureSession = AVCaptureSession.init()
         
@@ -98,7 +82,6 @@ extension AGCamera {
         captureSession.sessionPreset = settings.quality
         
         captureDevice = getCameraDevice(direction: settings.direction)
-        
         
         do {
             captureDeviceInput = try AVCaptureDeviceInput.init(device: captureDevice)
@@ -111,22 +94,27 @@ extension AGCamera {
                 throw(NSError.init(domain: "Something is wrong, can't add device as input.", code: 3, userInfo: nil))
             }
             
+            captureVideoDataOutput = AVCaptureVideoDataOutput()
             captureVideoDataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as NSString) : NSNumber(value: kCVPixelFormatType_420YpCbCr8BiPlanarFullRange as UInt32)]
-
+            captureVideoDataOutput.alwaysDiscardsLateVideoFrames = true
+            let queue = DispatchQueue(label: "com.whalerock.WCamera.captureQueue")
+            captureVideoDataOutput.setSampleBufferDelegate(self, queue: queue)
             
-            if captureSession.canAddOutput(captureVideoDataOutput) {
+            if captureVideoDataOutput != nil && captureSession.canAddOutput(captureVideoDataOutput) {
                 captureSession.addOutput(captureVideoDataOutput)
-                captureSession.addOutput(movieOutout)
             }
-            if captureSession.canAddOutput(stillImageOutput) {
+            
+            if movieOutput != nil && captureSession.canAddOutput(movieOutput) {
+                captureSession.addOutput(movieOutput)
+            }
+            
+            if stillImageOutput != nil && captureSession.canAddOutput(stillImageOutput) {
                 captureSession.addOutput(stillImageOutput)
             }
             
-         
-            
             captureSession.commitConfiguration()
             captureSession.startRunning()
-            delegate?.agCameraDidFinishInitializing()
+            delegate?.wCameraDidFinishInitializing()
             
         } catch let error as NSError {
             print("error:", error)
@@ -157,6 +145,13 @@ extension AGCamera {
                 delegate?.didCapture?(image: image)
             }
         }
+    }
+    
+    public func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+        
+    }
+    
+    public func captureOutput(_ captureOutput: AVCaptureOutput!, didDrop sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
         
     }
  

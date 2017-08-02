@@ -1,15 +1,15 @@
 //
-//  AGCameraTests.swift
-//  AGCameraTests
+//  WCameraTests.swift
+//  WCameraTests
 //
-//  Created by Aramik on 5/12/17.
-//  Copyright © 2017 aramikg. All rights reserved.
+//  Created by David Hoofnagle on 8/2/17.
+//  Copyright © 2017 Whalerock. All rights reserved.
 //
 
 import XCTest
-@testable import AGCamera
+@testable import WCamera
 
-class AGCameraTests: XCTestCase {
+class WCameraTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

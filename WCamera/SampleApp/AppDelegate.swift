@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  ExampleApplication
+//  SampleApp
 //
-//  Created by Aramik on 5/12/17.
-//  Copyright © 2017 aramikg. All rights reserved.
+//  Created by David Hoofnagle on 8/2/17.
+//  Copyright © 2017 Whalerock. All rights reserved.
 //
 
 import UIKit

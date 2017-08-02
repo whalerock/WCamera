@@ -8,28 +8,23 @@
 
 import UIKit
 import AVFoundation
-import AGCamera
+import WCamera
 
-class ViewController: UIViewController, AGCamera {
-   
+class ViewController: UIViewController, WCamera {
     
-
-
-    weak var delegate: AGCameraDelegate?
-
+    weak var delegate: WCameraDelegate?
 
     var previewView: UIView!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
+     var stillImageOutput: AVCapturePhotoOutput!
     var captureVideoDataOutput: AVCaptureVideoDataOutput!
+    var movieOutput: AVCaptureMovieFileOutput!
     var captureDeviceInput: AVCaptureDeviceInput!
     var captureDevice: AVCaptureDevice!
-    var cameraDirection: AGCameraDirection!
+    var cameraDirection: WCameraDirection!
     
-    var  captureSession: AVCaptureSession! 
-   
-
-    
+    var captureSession: AVCaptureSession!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +34,9 @@ class ViewController: UIViewController, AGCamera {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.delegate = self
-        let cameraSettings = AGCameraSettings.init(quality: AVCaptureSessionPresetHigh, type: AGCameraCaptureType.video, direction: AGCameraDirection.rear)
+        let cameraSettings = WCameraSettings.init(quality: AVCaptureSessionPresetHigh, type: WCameraCaptureType.video, direction: WCameraDirection.front)
        
-        do {
-            try start(cameraUsing: cameraSettings)
-
-        } catch let err {
-            print(err)
-        }
+        start(cameraUsing: cameraSettings)
         
     }
 
@@ -64,18 +54,17 @@ class ViewController: UIViewController, AGCamera {
 
 }
 
-extension ViewController: AGCameraDelegate {
-    func agCameraDidFinishInitializing() {
-        
+extension ViewController: WCameraDelegate {
+   
+    func wCameraDidFinishInitializing() {
         previewLayer.frame = self.view.frame
         previewView.frame.size.height -= 80
         self.view.insertSubview(previewView, at: 0)
     }
     
-    
     func didCapture(image: UIImage) {
         let t = image
-        
     }
+    
 }
 
