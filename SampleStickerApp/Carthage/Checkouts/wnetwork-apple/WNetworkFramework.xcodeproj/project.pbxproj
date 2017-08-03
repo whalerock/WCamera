@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A9FCAE781D74BBFB001B5EE4 /* WAssetManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FCAE771D74BBFB001B5EE4 /* WAssetManager.framework */; };
+		B02905B41D35780900965948 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D82401D32F75900824990 /* DownloadOperation.swift */; };
+		B02A30381D32E0C800947CBD /* WNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A30371D32E0C800947CBD /* WNetwork.swift */; };
+		B02A30421D32E17200947CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A30411D32E17200947CBD /* AppDelegate.swift */; };
+		B02A30441D32E17200947CBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A30431D32E17200947CBD /* ViewController.swift */; };
+		B02A30471D32E17200947CBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02A30451D32E17200947CBD /* Main.storyboard */; };
+		B02A30491D32E17200947CBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02A30481D32E17200947CBD /* Assets.xcassets */; };
+		B02A304C1D32E17200947CBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02A304A1D32E17200947CBD /* LaunchScreen.storyboard */; };
+		B046ED9B1D331137007A74E7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046ED9A1D331137007A74E7 /* Reachability.swift */; };
+		B046ED9C1D331137007A74E7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046ED9A1D331137007A74E7 /* Reachability.swift */; };
+		B046ED9E1D331341007A74E7 /* WNetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046ED9D1D331341007A74E7 /* WNetworkConstants.swift */; };
+		B046ED9F1D331341007A74E7 /* WNetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046ED9D1D331341007A74E7 /* WNetworkConstants.swift */; };
+		B046EDA11D332235007A74E7 /* WNetworkSpeedCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046EDA01D332235007A74E7 /* WNetworkSpeedCheck.swift */; };
+		B046EDA21D332235007A74E7 /* WNetworkSpeedCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046EDA01D332235007A74E7 /* WNetworkSpeedCheck.swift */; };
+		B046EDA41D3338B9007A74E7 /* WNetworkConnectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046EDA31D3338B9007A74E7 /* WNetworkConnectionType.swift */; };
+		B046EDA51D3338B9007A74E7 /* WNetworkConnectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046EDA31D3338B9007A74E7 /* WNetworkConnectionType.swift */; };
+		B046EDA81D3339F3007A74E7 /* WNetworkNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046EDA71D3339F3007A74E7 /* WNetworkNotification.swift */; };
+		B046EDA91D3339F3007A74E7 /* WNetworkNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B046EDA71D3339F3007A74E7 /* WNetworkNotification.swift */; };
+		B05D823E1D32F5C300824990 /* WNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02A30371D32E0C800947CBD /* WNetwork.swift */; };
+		B05D82411D32F75900824990 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D82401D32F75900824990 /* DownloadOperation.swift */; };
+		B05D82451D32F78900824990 /* WNetworkDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D82441D32F78900824990 /* WNetworkDownloader.swift */; };
+		B05D82481D32F79700824990 /* WNetworkDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D82441D32F78900824990 /* WNetworkDownloader.swift */; };
+		B0F054BC1D32DEE90010265E /* WNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = B0F054BB1D32DEE90010265E /* WNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B00960701D357C2800E5F94E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A9FCAE771D74BBFB001B5EE4 /* WAssetManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WAssetManager.framework; path = Carthage/Build/iOS/WAssetManager.framework; sourceTree = "<group>"; };
+		B02A30371D32E0C800947CBD /* WNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNetwork.swift; sourceTree = "<group>"; };
+		B02A303F1D32E17200947CBD /* WNetworkiOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WNetworkiOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B02A30411D32E17200947CBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B02A30431D32E17200947CBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B02A30461D32E17200947CBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B02A30481D32E17200947CBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B02A304B1D32E17200947CBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B02A304D1D32E17200947CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B046ED9A1D331137007A74E7 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		B046ED9D1D331341007A74E7 /* WNetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNetworkConstants.swift; sourceTree = "<group>"; };
+		B046EDA01D332235007A74E7 /* WNetworkSpeedCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNetworkSpeedCheck.swift; sourceTree = "<group>"; };
+		B046EDA31D3338B9007A74E7 /* WNetworkConnectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNetworkConnectionType.swift; sourceTree = "<group>"; };
+		B046EDA71D3339F3007A74E7 /* WNetworkNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNetworkNotification.swift; sourceTree = "<group>"; };
+		B05D82401D32F75900824990 /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadOperation.swift; sourceTree = "<group>"; };
+		B05D82441D32F78900824990 /* WNetworkDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNetworkDownloader.swift; sourceTree = "<group>"; };
+		B0F054B81D32DEE90010265E /* WNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0F054BB1D32DEE90010265E /* WNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WNetwork.h; sourceTree = "<group>"; };
+		B0F054BD1D32DEE90010265E /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B02A303C1D32E17100947CBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0F054B41D32DEE90010265E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9FCAE781D74BBFB001B5EE4 /* WAssetManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9FCAE761D74BBFB001B5EE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9FCAE771D74BBFB001B5EE4 /* WAssetManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B02A30401D32E17200947CBD /* WNetworkiOSDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B02A30411D32E17200947CBD /* AppDelegate.swift */,
+				B02A30431D32E17200947CBD /* ViewController.swift */,
+				B02A30451D32E17200947CBD /* Main.storyboard */,
+				B02A30481D32E17200947CBD /* Assets.xcassets */,
+				B02A304A1D32E17200947CBD /* LaunchScreen.storyboard */,
+				B02A304D1D32E17200947CBD /* Info.plist */,
+			);
+			path = WNetworkiOSDemo;
+			sourceTree = "<group>";
+		};
+		B046EDA61D3338BF007A74E7 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				B046EDA31D3338B9007A74E7 /* WNetworkConnectionType.swift */,
+			);
+			name = Enum;
+			sourceTree = "<group>";
+		};
+		B046EDAA1D333E24007A74E7 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B046ED9D1D331341007A74E7 /* WNetworkConstants.swift */,
+				B046EDA71D3339F3007A74E7 /* WNetworkNotification.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		B046EDAB1D333E3D007A74E7 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				B046ED9A1D331137007A74E7 /* Reachability.swift */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		B0F054AC1D32DEB20010265E = {
+			isa = PBXGroup;
+			children = (
+				B0F054DB1D32DF480010265E /* Sources */,
+				B02A30401D32E17200947CBD /* WNetworkiOSDemo */,
+				B0F054B91D32DEE90010265E /* Products */,
+				A9FCAE761D74BBFB001B5EE4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B0F054B91D32DEE90010265E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0F054B81D32DEE90010265E /* WNetwork.framework */,
+				B02A303F1D32E17200947CBD /* WNetworkiOSDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0F054DB1D32DF480010265E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B0F054BB1D32DEE90010265E /* WNetwork.h */,
+				B046EDAA1D333E24007A74E7 /* Constants */,
+				B046EDA61D3338BF007A74E7 /* Enum */,
+				B02A30371D32E0C800947CBD /* WNetwork.swift */,
+				B046EDA01D332235007A74E7 /* WNetworkSpeedCheck.swift */,
+				B05D82441D32F78900824990 /* WNetworkDownloader.swift */,
+				B05D82401D32F75900824990 /* DownloadOperation.swift */,
+				B046EDAB1D333E3D007A74E7 /* ThirdParty */,
+				B0F054BD1D32DEE90010265E /* Info-iOS.plist */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B0F054B51D32DEE90010265E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F054BC1D32DEE90010265E /* WNetwork.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B02A303E1D32E17100947CBD /* WNetworkiOSDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B02A304E1D32E17200947CBD /* Build configuration list for PBXNativeTarget "WNetworkiOSDemo" */;
+			buildPhases = (
+				B02A303B1D32E17100947CBD /* Sources */,
+				B02A303C1D32E17100947CBD /* Frameworks */,
+				B02A303D1D32E17100947CBD /* Resources */,
+				B00960701D357C2800E5F94E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WNetworkiOSDemo;
+			productName = WNetworkiOSDemo;
+			productReference = B02A303F1D32E17200947CBD /* WNetworkiOSDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B0F054B71D32DEE90010265E /* WNetwork iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0F054BE1D32DEE90010265E /* Build configuration list for PBXNativeTarget "WNetwork iOS" */;
+			buildPhases = (
+				B0F054B31D32DEE90010265E /* Sources */,
+				B0F054B41D32DEE90010265E /* Frameworks */,
+				B0F054B51D32DEE90010265E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WNetwork iOS";
+			productName = "WNetwork iOS";
+			productReference = B0F054B81D32DEE90010265E /* WNetwork.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0F054AD1D32DEB20010265E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					B02A303E1D32E17100947CBD = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					B0F054B71D32DEE90010265E = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = B0F054B01D32DEB20010265E /* Build configuration list for PBXProject "WNetworkFramework" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0F054AC1D32DEB20010265E;
+			productRefGroup = B0F054B91D32DEE90010265E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0F054B71D32DEE90010265E /* WNetwork iOS */,
+				B02A303E1D32E17100947CBD /* WNetworkiOSDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B02A303D1D32E17100947CBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B02A304C1D32E17200947CBD /* LaunchScreen.storyboard in Resources */,
+				B02A30491D32E17200947CBD /* Assets.xcassets in Resources */,
+				B02A30471D32E17200947CBD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B02A303B1D32E17100947CBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B046EDA51D3338B9007A74E7 /* WNetworkConnectionType.swift in Sources */,
+				B02A30441D32E17200947CBD /* ViewController.swift in Sources */,
+				B046ED9F1D331341007A74E7 /* WNetworkConstants.swift in Sources */,
+				B046EDA21D332235007A74E7 /* WNetworkSpeedCheck.swift in Sources */,
+				B046EDA91D3339F3007A74E7 /* WNetworkNotification.swift in Sources */,
+				B02905B41D35780900965948 /* DownloadOperation.swift in Sources */,
+				B046ED9C1D331137007A74E7 /* Reachability.swift in Sources */,
+				B05D823E1D32F5C300824990 /* WNetwork.swift in Sources */,
+				B02A30421D32E17200947CBD /* AppDelegate.swift in Sources */,
+				B05D82481D32F79700824990 /* WNetworkDownloader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0F054B31D32DEE90010265E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B046ED9E1D331341007A74E7 /* WNetworkConstants.swift in Sources */,
+				B05D82451D32F78900824990 /* WNetworkDownloader.swift in Sources */,
+				B02A30381D32E0C800947CBD /* WNetwork.swift in Sources */,
+				B046ED9B1D331137007A74E7 /* Reachability.swift in Sources */,
+				B05D82411D32F75900824990 /* DownloadOperation.swift in Sources */,
+				B046EDA81D3339F3007A74E7 /* WNetworkNotification.swift in Sources */,
+				B046EDA41D3338B9007A74E7 /* WNetworkConnectionType.swift in Sources */,
+				B046EDA11D332235007A74E7 /* WNetworkSpeedCheck.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B02A30451D32E17200947CBD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B02A30461D32E17200947CBD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B02A304A1D32E17200947CBD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B02A304B1D32E17200947CBD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B02A304F1D32E17200947CBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sources",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = WNetworkiOSDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = whalerock.WNetworkiOSDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B02A30501D32E17200947CBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sources",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = WNetworkiOSDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = whalerock.WNetworkiOSDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0F054B11D32DEB20010265E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		B0F054B21D32DEB20010265E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		B0F054BF1D32DEE90010265E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/Carthage/Build/iOS\"",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Sources/Info-iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "whalerock.WNetwork-iOS";
+				PRODUCT_NAME = WNetwork;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B0F054C01D32DEE90010265E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/Carthage/Build/iOS\"",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Sources/Info-iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "whalerock.WNetwork-iOS";
+				PRODUCT_NAME = WNetwork;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B02A304E1D32E17200947CBD /* Build configuration list for PBXNativeTarget "WNetworkiOSDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B02A304F1D32E17200947CBD /* Debug */,
+				B02A30501D32E17200947CBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0F054B01D32DEB20010265E /* Build configuration list for PBXProject "WNetworkFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F054B11D32DEB20010265E /* Debug */,
+				B0F054B21D32DEB20010265E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0F054BE1D32DEE90010265E /* Build configuration list for PBXNativeTarget "WNetwork iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F054BF1D32DEE90010265E /* Debug */,
+				B0F054C01D32DEE90010265E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0F054AD1D32DEB20010265E /* Project object */;
+}

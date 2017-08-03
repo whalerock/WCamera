@@ -1,0 +1,9 @@
+module: WAnalytics
+author: Aramik Gharachehdaghi
+github_url: https://github.com/whalerock/wanalytics-ios.git
+module_version: 0.1.0
+clean: true
+
+swift_version: 2.2
+
+copyright: '© 2016 Whalerock Industries.'

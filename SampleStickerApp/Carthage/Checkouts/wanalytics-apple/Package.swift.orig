@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+=======
+import PackageDescription
+
+>>>>>>> 1a9509b8ea89355ddebf1ecf407639268c6506b1
+let package = Package(
+    name: "WAnalytics"
+)

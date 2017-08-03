@@ -1,0 +1,6 @@
+github "Whalerock/WUtilities-apple" "1.0.3"
+github "whalerock/wanalytics-apple" "1.1.7"
+github "whalerock/wassetmanager-apple" "1.0.4"
+github "whalerock/wconfig-apple" "1.2.3"
+github "whalerock/wnetwork-apple" "1.0.14"
+github "whalerock/wstorekit-apple" "2.0.3"

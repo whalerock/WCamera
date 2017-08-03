@@ -1,0 +1,34 @@
+{
+    "storyboard": "Main",
+    "defaultRoute": {
+        "identifier": "sbContainerViewController",
+        "class": "Blitzmoji.ContainerViewController"
+    },
+    "routes": {
+        "home": {
+            "identifier": "sbContainerViewController",
+            "class": "Blitzmoji.ContainerViewController"
+        },
+        "merch": {
+            "handler": "emoji.webviewhandler",
+            "identifier": "sb_webViewController"
+        },
+        "merch/product": {
+            "handler": "emoji.webviewhandler",
+            "identifier": "sb_webViewController"
+        },
+        "packs": {
+            "identifier": "sbPurchaseViewController",
+            "class": "Blitzmoji.PurchaseViewController",
+            "presentationStyle": "present"
+        },
+        "privacy": {
+            "handler": "emoji.webviewhandler",
+            "identifier": "sb_webViewController"
+        },
+        "webview": {
+            "handler": "emoji.webviewhandler",
+            "identifier": "sb_webViewController"
+        }
+    }
+}

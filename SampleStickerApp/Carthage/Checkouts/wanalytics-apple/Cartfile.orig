@@ -1,0 +1,6 @@
+<<<<<<< HEAD
+git "git@github.com:whalerock/wconfig-apple.git" "swift3"
+
+=======
+git "git@github.com:whalerock/wconfig-apple.git" ~> 1.0.0
+>>>>>>> 1a9509b8ea89355ddebf1ecf407639268c6506b1

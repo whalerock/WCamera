@@ -1,0 +1,212 @@
+//
+//  WAnalytics.swift
+//  WAnalytics
+//
+//  Created by Aramik on 7/20/16.
+//  Copyright © 2016 Aramik. All rights reserved.
+//
+
+import Foundation
+import WConfig
+
+/// WAnalytics singleton class used to setup and manage tracking through the framework.
+open class WAnalytics {
+    
+    // MARK: Variables
+    
+    /// WAnalytics sharedInstance
+    open static let manager = WAnalytics()
+    
+    /// Enable/Disable WAnalytics console logs
+    open var loggingEnabled: Bool = true
+    
+    /// Reference to Google Analytics defaultTracker, only made available through the 'setupGA:accountID' function.
+    open fileprivate(set) var gaDefaultTracker: GAITracker?
+    
+    
+    // MARK: Overrides
+    fileprivate init() {
+        checkForInstall()
+        
+        
+    }
+    
+    // MARK: Lifecycle
+    
+    /**
+     Use this function to auto configure all Services via WConfig framework
+     */
+    open func autoConfigure() {
+        if let gaAccountId = WConfig.sharedInstance.get("analytics.ga.accountId") as? String {
+            setupGA(gaAccountId)
+            log("GoogleAnalytics setup with \(gaAccountId)")
+        }
+    }
+    
+    
+    // MARK: Setup functions
+    
+    /**
+     Use this function in your AppDelegate's 'application:didFinishLaunchingWithOptions:' to setup Google Analtyics service.
+     
+     - parameter accountID: Application Tracking ID provided by GA; (i.e. 'UA-54312694-31')
+     */
+    open func setupGA(_ accountID: String) {
+        GAI.sharedInstance().trackUncaughtExceptions = false
+        GAI.sharedInstance().dispatchInterval = 20;
+        gaDefaultTracker = GAI.sharedInstance().tracker(withTrackingId: accountID)
+        gaDefaultTracker?.allowIDFACollection = true
+        self.log("setup Google Analytics with account: \(accountID)")
+    }
+    
+    
+    // MARK: Tracking functions
+    
+    /**
+     Use this function to track any screen view events that are NOT already being tracked.  Keep in my automated tracking is on by default and will track every viewDidAppear as a screen view if waID and waCateogry are provided.
+     
+     - parameter service: See WAnalyticsService
+     - parameter name:    Name of the screen you want to track
+     */
+    open func trackScreen(_ service:WAnalyticsService, name:String) {
+        trackScreenGA(name)
+        log("screen tracking sent!")
+    }
+    
+    fileprivate func trackScreenGA(_ name:String) {
+        guard let defaultTracker = gaDefaultTracker else {
+            log("Google Analytics is not setup!")
+            return
+        }
+        defaultTracker.set(kGAIScreenName, value:name)
+        // set custom dimension for contentID to 0
+        defaultTracker.set(GAIFields.customDimension(for: 1), value: "0")
+        defaultTracker.send(GAIDictionaryBuilder.createScreenView().build() as [NSObject:AnyObject])
+        GAI.sharedInstance().dispatch()
+    }
+    
+    /**
+     Use this function to track any events that are NOT already being tracked.  Keep in my automated tracking is on by default and will track every view along with all button clicks if waID and waCateogry are provided.
+     
+     - parameter service:    See WAnaltyicsService.
+     - parameter properties: See WAnaltyicsTrackingProperties.
+     */
+    open func trackEvent(_ service:WAnalyticsService, properties:WAnalyticsTrackingProperties) {
+        trackEventGA(properties)
+        
+        log("\(properties.trackingID) event tracking sent!")
+    }
+    
+    
+    /**
+     Used to convert WAnalyticsTrackingProperties to GA format
+     
+     - parameter properties: See WAnalyticsTrackingProperties.
+     */
+    fileprivate func trackEventGA(_ properties:WAnalyticsTrackingProperties) {
+        print(properties.trackingID, properties.trackingCategory)
+        guard let defaultTracker = gaDefaultTracker else {
+            log("Google Analytics is not setup!")
+            return
+        }
+        
+        for (index, value) in properties.customDimension.enumerated() {
+            defaultTracker.set(GAIFields.customDimension(for: UInt(index + 1)), value: value)
+        }
+        
+        let eventTracker: NSObject = GAIDictionaryBuilder.createEvent(
+            withCategory: properties.trackingCategory,
+            action: "\(properties.trackingAction)",
+            label: properties.trackingLabel,
+            value: 0).build()
+        
+        
+        defaultTracker.send(eventTracker as! [NSObject : AnyObject])
+        GAI.sharedInstance().dispatch()
+    }
+    
+    
+    
+<<<<<<< HEAD
+    public func trackEventGA(category:String?, action: String?, label: String?, customDimensions: [String]?, content:String) {
+=======
+    open func trackEventGA(_ category:String?, action: String?, label: String?, customDimensions: [String]?, content:String? = nil) {
+>>>>>>> swift3
+        guard let defaultTracker = gaDefaultTracker else {
+            log("Google Analytics is not setup!")
+            return
+        }
+        
+<<<<<<< HEAD
+        if let contentId = content {
+            GAI.sharedInstance().defaultTracker.set(GAIFields.customDimension(for: 1), value: contentId)
+            print("tack contentId: \(contentId)")
+        }
+        
+        if let deviceID = UIDevice.currentDevice().identifierForVendor?.UUIDString {
+=======
+        if let deviceID = UIDevice.current.identifierForVendor?.uuidString {
+>>>>>>> swift3
+            //tracker.set(GAIFields.customDimensionForIndex(1), value: deviceID)
+            GAI.sharedInstance().defaultTracker.set(GAIFields.customDimension(for: 1), value: deviceID)
+            print("tracked devicedID:",category, action ,deviceID, label)
+        }
+        
+        
+        // setup custom dimensions if available
+        if let dimensions = customDimensions {
+            for (index, value) in dimensions.enumerated() {
+                defaultTracker.set(GAIFields.customDimension(for: UInt(index + 2)), value: value)
+            }
+        }
+        
+        let trackingCategory = category ?? ""
+        let trackingAction = action ?? ""
+        let trackingLabel = label ?? ""
+        
+        let eventTracker: NSObject = GAIDictionaryBuilder.createEvent(
+            withCategory: trackingCategory,
+            action: trackingAction,
+            label: trackingLabel,
+            value: 0).build()
+        
+        defaultTracker.send(eventTracker as! [NSObject : AnyObject])
+        GAI.sharedInstance().dispatch()
+        
+    }
+    
+    fileprivate func checkForInstall() {
+        if let installed = KeychainWrapper.defaultKeychainWrapper().boolForKey("Installed") {
+            if installed {
+                print("Already installed, not tracking new install.")
+            } else {
+                print("not installed")
+                _ = KeychainWrapper.defaultKeychainWrapper().setBool(true, forKey: "Installed")
+                if let trackingProperties = WAnalyticsTrackingProperties(id: "install", category: "containerapp", action: "newInstall", label: nil, contentID: nil) {
+                    trackEvent(WAnalyticsService.all, properties: trackingProperties)
+                }
+            }
+        }  else {
+            print("New/First install.")
+            if let trackingProperties = WAnalyticsTrackingProperties(id: "install", category: "containerapp", action: "newInstall", label: nil, contentID: nil) {
+                trackEvent(WAnalyticsService.all, properties: trackingProperties)
+            }
+            _ = KeychainWrapper.defaultKeychainWrapper().setBool(true, forKey: "Installed")
+        }
+    }
+    
+    // MARK: Additional Helpers
+    
+    /**
+     WRI custom logger which provides ability to enable/disable logging per class basis. Makes for cleaner debug console when needed.
+     - parameter type:    See WRILoggerType
+     - parameter message: Message you want to log
+     */
+    fileprivate func log(_ message:String) {
+        guard self.loggingEnabled else {
+            return
+        }
+        print("[WAnalytics]:", message)
+    }
+    
+}
